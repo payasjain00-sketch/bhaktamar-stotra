@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaktamar Stotra - Divine Singing Journey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Aura Graphic -->
+    <div class="divine-aura"></div>
+
+    <!-- MAIN HOME SCREEN -->
+    <section id="home-screen" class="screen active">
+        <div class="main-frame animate-fade-in">
+            <!-- Replace with actual Adinath Bhagwan image path -->
+            <img src="https://i.ibb.co/xtg3bqwj/aadi.jpg" alt="Bhagwan Adinath Digambar" class="god-image">
+            <h1 class="divine-line">Devotional Echoes of Rishabhadeva</h1>
+            <p class="sub-line">Experience the spiritual energy of Bhaktamar strotra </p>
+            <button id="start-btn" class="glow-button">Enter to your Divine Journey</button>
+        </div>
+
+        <!-- shreya ji Profile (Bottom Right) -->
+        <div class="shreya ji-profile">
+            <!-- Replace with your friend's photo path -->
+            <img src="https://i.ibb.co/XZy520th/shreya-ji.jpg" alt="shreya-ji" class="shreya-ji-photo">
+            <div class="By Jain Swar Sisters">
+                <h3>shreya Jain and shruti Jain</h3>
+                <p>Voice of Spirituality and love </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO PLAYER SCREEN -->
+    <section id="video-screen" class="screen">
+        <div class="video-container">
+            <div class="verse-indicator">Verse <span id="current-verse-num">1</span> / 48</div>
+            
+            <!-- Video Element with placeholder online video -->
+            <video id="stotra-video" src="https://www.youtube.com/watch?v=-YfnrZoTuWQ" controls></video>
+            
+            <div class="video-controls">
+                <button id="prev-btn" class="nav-button">← Previous Verse</button>
+                <button id="next-btn" class="nav-button">Next Verse →</button>
+            </div>
+            
+            <button id="home-btn" class="back-home-btn">Back to Main Frame</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
