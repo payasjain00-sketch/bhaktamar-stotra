@@ -1,2 +1,2 @@
-# bhaktamar-stotra
+# bhaktamar-strotra
 web site for shreya jain 
