@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaktamar Stotra - Divine Singing Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP: powers every entrance, transition and petal animation on this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+    <!-- Background Aura Graphic -->
+    <div class="divine-aura"></div>
+
+    <!-- Golden ember / glow particles, drawn continuously by script.js (matches reference video) -->
+    <canvas id="ember-canvas" aria-hidden="true"></canvas>
+
+    <!-- Falling flower petals layer (populated by script.js) -->
+    <div id="petal-layer" aria-hidden="true"></div>
+
+    <!-- MAIN HOME SCREEN -->
+    <section id="home-screen" class="screen active">
+        <div class="main-frame">
+            <div class="aura-rays" aria-hidden="true"></div>
+            <img src="https://i.ibb.co/xtg3bqwj/aadi.jpg" alt="Bhagwan shri 1008 Adinath" class="god-image" id="god-image">
+            <h1 class="divine-line shimmer-text" id="divine-heading">Devotional Echoes of Rishabhadeva</h1>
+            <p class="sub-line" id="divine-subline">Experience the spiritual energy of Bhaktamar stotra</p>
+            <button id="start-btn" class="glow-button">Enter to your Divine Journey</button>
+        </div>
+
+        <!-- shreya ji Profile (Bottom Right) -->
+        <div class="singer-profile" id="singer-profile">
+            <img src="https://i.ibb.co/XZy520th/shreya-ji.jpg" alt="shreya-ji" class="singer-photo">
+            <div class="singer-info">
+                <h3>shreya Jain and shruti Jain</h3>
+                <p>Voice of Spirituality and love</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO PLAYER SCREEN -->
+    <section id="video-screen" class="screen">
+        <div class="video-container">
+            <div class="verse-indicator">Verse <span id="current-verse-num">1</span> / <span id="total-verse-num">48</span></div>
+
+            <div class="video-wrapper">
+                <!-- Video source is set dynamically by script.js (loadVerse), so no src is needed here -->
+                <video id="stotra-video" controls></video>
+                <div class="video-loader" id="video-loader">
+                    <div class="lotus-spinner"></div>
+                </div>
+            </div>
+
+            <div class="video-controls">
+                <button id="prev-btn" class="nav-button">&larr; Previous Verse</button>
+                <button id="next-btn" class="nav-button">Next Verse &rarr;</button>
+            </div>
+
+            <button id="home-btn" class="back-home-btn">Back to Main Frame</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
