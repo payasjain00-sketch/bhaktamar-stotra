@@ -1,0 +1,265 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0214; /* Deep spiritual dark purple/black */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Cosmic Divine Aura Background Effect */
+.divine-aura {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(255,183,77,0.15) 0%, rgba(142,36,170,0.05) 50%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+    animation: pulseAura 8s infinite alternate;
+}
+
+@keyframes pulseAura {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+/* Falling Flower Petals Effect */
+.flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* lets clicks pass through to buttons underneath */
+    overflow: hidden;
+    z-index: 10;
+}
+
+.petal {
+    position: absolute;
+    top: -40px;
+    opacity: 0.9;
+    animation-name: petalFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    filter: drop-shadow(0 0 4px rgba(255, 183, 77, 0.5));
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(50vh) translateX(var(--drift, 30px)) rotate(180deg);
+    }
+    100% {
+        transform: translateY(105vh) translateX(calc(var(--drift, 30px) * -1)) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* Screen Management */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Home Screen Graphics */
+.main-frame {
+    text-align: center;
+    max-width: 600px;
+    z-index: 3;
+}
+
+/* This class was already used in the HTML but had no rule - added it here */
+.animate-fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.god-image {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(255, 193, 7, 0.4);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 40px rgba(255, 193, 7, 0.4); }
+    50% { transform: translateY(-15px); box-shadow: 0 0 60px rgba(255, 193, 7, 0.7); }
+}
+
+.divine-line {
+    font-size: 2.5rem;
+    margin-top: 25px;
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    letter-spacing: 1px;
+}
+
+.sub-line {
+    font-size: 1.1rem;
+    color: #e0b0ff;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* Cinematic Glow Button */
+.glow-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(45deg, #ff8f00, #ff2a00);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 42, 0, 0.4);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.glow-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(255, 143, 0, 0.8);
+}
+
+/* Singer Profile (Bottom Right) */
+.singer-profile {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 50px 15px 15px 50px;
+    border-left: 3px solid #ff8f00;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: slideUp 1.2s ease-out;
+}
+
+.singer-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #ff8f00;
+}
+
+.singer-info h3 {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.singer-info p {
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+/* Video Screen Graphics */
+.video-container {
+    width: 80%;
+    max-width: 850px;
+    text-align: center;
+    background: rgba(15, 5, 25, 0.7);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    transform: scale(0.9);
+    transition: transform 0.8s ease;
+}
+
+#video-screen.active .video-container {
+    transform: scale(1);
+}
+
+.verse-indicator {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255,215,0,0.4);
+    font-weight: bold;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.video-controls {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-button {
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #ff8f00;
+    border-color: #ff8f00;
+    box-shadow: 0 0 15px rgba(255,143,0,0.5);
+}
+
+.back-home-btn {
+    margin-top: 20px;
+    background: transparent;
+    color: #e0b0ff;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
